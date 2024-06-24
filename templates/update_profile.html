@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* Styles */
+</style>
+
+<div class="content-wrapper">
+    <h1>Update Profile</h1>
+    <form action="{{ url_for('update_profile_form') }}" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{ user.email }}" required>
+        </div>
+        <div>
+            <label for="profile_picture">Profile Picture:</label>
+            <input type="file" id="profile_picture" name="profile_picture" accept=".png, .jpg, .jpeg, .gif">
+            <img src="{{ url_for('static', filename=user.profile_picture) }}" alt="Current Profile Picture" style="width: 100px; height: 100px;">
+        </div>
+        <button type="submit">Update Profile</button>
+    </form>
+</div>
+{% endblock %}

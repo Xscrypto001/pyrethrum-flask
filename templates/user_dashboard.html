@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    body {
+        font-family: 'Arial, sans-serif';
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .dashboard-container {
+        max-width: 800px;
+        margin: 80px auto; /* Center the container and add space from top */
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+
+    .welcome-message {
+        text-align: center;
+        color: #34495e;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .user-greeting {
+        text-align: center;
+        color: #27ae60;
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .content-section {
+        margin-bottom: 30px;
+    }
+
+    .content-section h2 {
+        color: #e67e22;
+        border-bottom: 2px solid #e67e22;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+
+    .content-section p {
+        color: #2c3e50;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .content-section ul {
+        color: #2c3e50;
+        font-size: 18px;
+        line-height: 1.6;
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+</style>
+
+<div class="dashboard-container">
+    <h1>Dashboard</h1>
+    <div class="welcome-message">Welcome to your dashboard!</div>
+    <div class="user-greeting">Hello, {{ session['username'] }}!</div>
+
+    <div class="content-section">
+        <h2>Your Account Information</h2>
+        <p><strong>Username:</strong> {{ session['username'] }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Registration Date:</strong> {{ user.registration_date }}</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Your Recent Activity</h2>
+        <ul>
+            <li>Viewed the latest product catalog</li>
+            <li>Updated profile information</li>
+            <li>Participated in the community forum</li>
+        </ul>
+    </div>
+
+    <div class="content-section">
+        <h2>Your Orders</h2>
+        <p>You have no recent orders.</p>
+        <p>Explore our products <a href="{{ url_for('services') }}">here</a>.</p>
+    </div>
+
+</div>
+{% endblock %}

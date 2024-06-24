@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Your Cart</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_items %}
+        <tr>
+            <td>{{ item[1] }}</td>
+            <td>${{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+            <td>${{ item[2] * item[3] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('checkout') }}">Checkout</a>
+{% endblock %}

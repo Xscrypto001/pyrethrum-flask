@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: 'Arial, sans-serif';
+        background-color: #f4f7f6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        text-align: center;
+        background-color:transparent;
+
+        background-color: rgba(232, 234, 232, 0.5); /* Transparent green */
+        backdrop-filter: blur(10px); /* Blurs background behind the element */
+        -webkit-backdrop-filter: blur(10px);
+        
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #2c3e50;
+        font-size: 3em;
+        margin-bottom: 20px;
+        padding-top: 20px;
+    }
+    p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        color: #555;
+    }
+    .btn-primary {
+        background-color: #e67e22;
+        color: #fff;
+        padding: 12px 25px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        margin: 10px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        display: inline-block;
+    }
+    .btn-primary:hover {
+        background-color: #d35400;
+        transform: translateY(-2px);
+    }
+    .features {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+        text-align: left;
+        flex-wrap: wrap;
+    }
+    .feature {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        width: 30%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .feature h3 {
+        color: #27ae60;
+        margin-top: 0;
+        font-size: 1.5em;
+    }
+    .feature p {
+        font-size: 1em;
+        color: #666;
+    }
+    @media (max-width: 768px) {
+        .features {
+            flex-direction: column;
+            align-items: center;
+        }
+        .feature {
+            width: 80%;
+        }
+    }
+</style>
+
+<div class="content-wrapper">
+    <h1>Welcome to Our Pyrethrum Processing Company</h1>
+    <p>Discover the natural beauty and benefits of Pyrethrum flowers.</p>
+    <a href="/about" class="btn-primary">Learn More</a>
+    <a href="/signup" class="btn-primary">Join Us</a>
+
+    <div class="features">
+        <div class="feature">
+            <h3>Eco-Friendly Pest Control</h3>
+            <p>Our Pyrethrum-based products provide a natural and safe way to control pests in your garden and home, without harming the environment.</p>
+        </div>
+        <div class="feature">
+            <h3>Quality Products</h3>
+            <p>We offer a variety of high-quality Pyrethrum products, including sprays, powders, and concentrates, all designed to meet your pest control needs.</p>
+        </div>
+        <div class="feature">
+            <h3>Expert Support</h3>
+            <p>Our team of experts is here to provide you with personalized advice and support to ensure you get the most out of our products.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

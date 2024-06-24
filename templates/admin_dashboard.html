@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Admin Dashboard</h1>
+    
+    <div class="pending-approvals">
+        <h2>Pending Approvals</h2>
+        <ul>
+            {% for user in pending_users %}
+                <li>
+                    <strong>{{ user.username }}</strong> - Role: {{ user.role }}
+                    <form action="{{ url_for('approve_user', user_id=user.id) }}" method="post" style="display: inline;">
+                        <button type="submit">Approve</button>
+                    </form>
+                    <form action="{{ url_for('reject_user', user_id=user.id) }}" method="post" style="display: inline;">
+                        <button type="submit">Reject</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
